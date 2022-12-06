@@ -1,0 +1,15 @@
+<div [ngClass]="{navigation: _sidenavService.getIsSidenavOpened()}" class="content">
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a *ngFor="let item of items, let ind = index" [ngClass]="{active: activeTabIndex === ind}"
+            (click)="onChangeTab(ind)" class="flex-sm-fill text-sm-center nav-link border" aria-current="page"
+            href="#">{{item}}</a>
+    </nav>
+    <div class="tabs-container" [ngSwitch]="activeTabIndex">
+        <div class="tabItem" *ngSwitchCase="0">
+            <app-todos></app-todos>
+        </div>
+        <div class="tabItem" *ngSwitchCase="1">
+            <app-settings></app-settings>
+        </div>
+    </div>
+</div>

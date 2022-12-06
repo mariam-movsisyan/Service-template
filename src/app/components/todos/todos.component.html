@@ -1,0 +1,18 @@
+<div class="d-flex">
+    <div class="page-style">
+        <input type="text" class="form-control" placeholder="Title" aria-describedby="basic-addon1" [(ngModel)]="title">
+        <input type="text" class="form-control mt-4" placeholder="Description" aria-describedby="basic-addon1"
+            [(ngModel)]="description">
+        <div class="d-flex justify-content-center mt-4">
+            <button type="button" class="btn btn-dark" (click)="onClickSubmit()">Submit</button>
+        </div>
+    </div>
+    <ng-container *ngIf="items.length">
+        <div class="d-flex flex-column card-style mt-4 card-style">
+            <div class="col-sm-12 card card-body mt-3 card-height" *ngFor="let item of items">
+                <h3 class="text-center card-title">{{item.title}}</h3>
+                <p class="text-center card-text">{{item.description}}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>

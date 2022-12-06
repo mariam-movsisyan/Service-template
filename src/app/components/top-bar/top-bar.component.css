@@ -1,0 +1,8 @@
+.navbar {
+    margin-left: 0px;
+    transition: all .3s;
+}
+
+.navbarWidth {
+    margin-left: 280px;
+}

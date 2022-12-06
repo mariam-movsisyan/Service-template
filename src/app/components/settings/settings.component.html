@@ -1,0 +1,25 @@
+<div>
+    <div class="mt-4 d-flex justify-content-end">
+        <button type="button" class="btn btn-dark btn-lg" (click)="onClickAdd()">Add</button>
+    </div>
+    <form>
+        <div class="row" *ngFor="let item of items, let i = index">
+            <div class="col mt-3">
+                <input [(ngModel)]="item.title" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+                    placeholder="title">
+            </div>
+            <div class="col mt-3">
+                <input type="text" class="form-control" placeholder="link" [(ngModel)]="item.link"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" id="defaultCheck1" [(ngModel)]="item.isActive"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+        <div class="mt-4 d-flex justify-content-center">
+            <button type="button" class="btn btn-dark btn-lg button" *ngIf="!isObjectSame()"
+                (click)="onClickSave()">Save</button>
+        </div>
+    </form>
+</div>
